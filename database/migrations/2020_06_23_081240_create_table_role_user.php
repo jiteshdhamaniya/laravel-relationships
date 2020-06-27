@@ -22,6 +22,8 @@ class CreateTableRoleUser extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('role_id')->references('id')->on('roles');
 
+
+
         });
     }
 
@@ -32,6 +34,7 @@ class CreateTableRoleUser extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('role_user_tables');
+       // Schema::disableForeignKeyConstraints();
+        Schema::dropIfExists('role_user');
     }
 }

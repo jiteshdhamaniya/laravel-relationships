@@ -71,7 +71,7 @@ class User extends Authenticatable
      }
 
     /**
-     * Get the car's owner.
+     * Get Comments
      */
     public function comments()
     {
@@ -90,5 +90,21 @@ class User extends Authenticatable
 
     }
 
+    // public function tags(){
+
+    //     return $this->morphMany('App\Tag', 'dumb');
+
+    // }
+
+        /**
+         *
+         * Many to Many Morph
+         */
+
+        public function tags(){
+
+            return $this->morphToMany('App\Tag', 'taggable');
+
+        }
 
 }

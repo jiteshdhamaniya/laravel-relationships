@@ -11,6 +11,8 @@
 |
 */
 
+use Illuminate\Support\Facades\DB;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -37,4 +39,28 @@ Route::get('routes', function(){
 
 });
 
+
+Route::get('table',function(){
+    dump(
+
+        //$query = DB::table('users')->select('name','age')->get()
+
+      //  $query = DB::table('users')->where('email', 'dodezaci@mailinator.net')->where('password', '$2y$10$yYjjgji0ZNXRH/.LmG')->exists()
+
+      DB::table('users')
+      ->inRandomOrder('id')
+      ->first()
+
+//         $users = DB::table('users')
+//         ->leftJoin('posts', 'users.id', '=', 'posts.user_id')
+//         ->get(),
+
+// $users = DB::table('users')
+//         ->rightJoin('posts', 'users.id', '=', 'posts.user_id')
+//         ->get()
+
+    );
+
+
+});
 
